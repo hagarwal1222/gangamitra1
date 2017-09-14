@@ -27,7 +27,7 @@ html
                       |  +91 976 036 0790
                   li
                       i.fa.fa-envelope-o
-                      |  info@domain.com
+                      a(href='mailto:info@domain.com?Subject=Hello%20again', target='_top') info@domain.com
               // ################################################################################################
       // ################################################################################################
       // ################################################################################################
@@ -48,7 +48,7 @@ html
                           a.drop(href='#') Pages
                           ul
                               li
-                                  a(href='products/productgallery') Gallery
+                                  a(href='/products/productgallery') Gallery
                               li
                                   a(href='pages/full-width.html') Full Width
                               li
@@ -149,25 +149,16 @@ html
                                 sup th
                                 |  April 2045
                             p.nospace Cras auctor metus vel augue gravida ultrices maecenas consectetur…
-            // ################################################################################################
-    // ################################################################################################
-    // ################################################################################################
-    // ################################################################################################
-    .wrapper.row5
-        #copyright.hoc.clear
-            // ################################################################################################
-            p.fl_left
-                | Copyright © 2016 - All Rights Reserved -
-                a(href='#') Domain Name
-            p.fl_right
-                | Template by
-                a(target='_blank', href='http://www.os-templates.com/', title='Free Website Templates') OS Templates
-            // ################################################################################################
-    // ################################################################################################
-    // ################################################################################################
-    // ################################################################################################
-    a#backtotop(href='#top')
-        i.fa.fa-chevron-up
+        .wrapper.row5
+            #copyright.hoc.clear
+                p.fl_left
+                    | Copyright © 2016 - All Rights Reserved -
+                    a(href='#') Domain Name
+                //p.fl_right
+                //    | Template by
+                //    a(target='_blank', href='http://www.os-templates.com/', title='Free Website Templates') OS Templates
+                a#backtotop(href='#top')
+                    i.fa.fa-chevron-up
     // JAVASCRIPTS
 script(src='/javascripts/jquery.mobilemenu.js')
 script(src='/javascripts/jquery.backtotop.js')

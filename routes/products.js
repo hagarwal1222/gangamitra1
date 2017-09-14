@@ -18,4 +18,8 @@ router.get('/productgallery', function(req, res, next) {
     res.render('products/productgallery', { title: 'Express'});
 });
 
+router.get('/buyproducts', function(req, res, next) {
+    res.render('products/buyproducts', { title: 'Express'});
+});
+
 module.exports = router;
