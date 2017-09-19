@@ -15,8 +15,8 @@ function populateTable() {
         // For each item in our JSON, add a table row and cells to the content string
         $.each(data, function(){
             tableContent += '<tr>';
-            tableContent += '<td><a href="#" class="" rel="' + this.name + '">' + this.name + '</a></td>';
-            tableContent += '<td> </td>';
+            tableContent += '<td><a class="" rel="' + this.name + '">' + this.name + '</a></td>';
+            tableContent += '<td><a class="" rel="' + this.description + '">' + this.description + '</a></td>';
             // tableContent += '<td><a href="#" class="" rel="' + this._id + '">delete</a></td>';
             tableContent += '</tr>';
         });
@@ -36,7 +36,7 @@ function populateBuyPageList() {
         // projectList = data;
         // For each item in our JSON, add a table row and cells to the content string
         $.each(data, function(){
-            tableContent += '<input style="float: left;" type="checkbox" name="'+ this.name +'" value="'+this.id+'">'+this.name+'<br style="clear: both;">';
+            tableContent += '<input style="float: left;" type="checkbox" name="'+ this.name +'" value="'+this._id+'">'+this.name+'<br style="clear: both;">';
         });
         $('#listproductstoselect').html(tableContent);
     });
@@ -57,7 +57,7 @@ function addProduct(event) {
         // If it is, compile all user info into one object
         var newProduct = {
             'name': $('#addproduct fieldset input#inputProductName').val(),
-            // 'email': $('#addUser fieldset input#inputUserEmail').val(),
+            'description': $('#addproduct fieldset input#inputProductDescription').val(),
             // 'fullname': $('#addUser fieldset input#inputUserFullname').val(),
             // 'age': $('#addUser fieldset input#inputUserAge').val(),
             // 'location': $('#addUser fieldset input#inputUserLocation').val(),
