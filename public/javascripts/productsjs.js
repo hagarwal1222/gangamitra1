@@ -104,11 +104,77 @@ function addProfunc(){
 };
 
 function showorderformonclick() {
-    $("#listproductstoselect").hide();
-    $("#orderForm").show();
+    if ($('#listproductstoselect input:checkbox').is(":checked")){
+        $("#listproductstoselect").hide();
+        $("#orderForm").show();
+    }else{
+        alert("check atleast 1");
+    }
 };
 
 function showorderlistonclick() {
     $("#orderForm").hide();
     $("#listproductstoselect").show();
+};
+
+function proceedwithorder() {
+    var flag = 0;
+    var email = $("#userEmailOrder").val();
+    var products_id = [];
+    $('#listproductstoselect input:checkbox:checked').each(function(){
+        products_id.push($(this).val());
+    });
+    if ($("#userNameOrder").val().length > 3){
+        if (validateEmail(email)) {
+            if ($("#userContactnoOrder").val().length > 9){
+                if (!isNaN($("#userContactnoOrder").val())){
+                    flag = 1;
+                }else{
+                    alert("fill digits");
+                }
+            }else{
+                alert("fill correct number");
+            }
+        }else{
+            alert("fill correct email");
+        }
+    }else{
+        alert("Fill name");
+    }
+    if (flag == 1){
+        var order_details = {
+            'name': $("#userNameOrder").val(),
+            'email': $("#userEmailOrder").val(),
+            'phone': $("#userContactnoOrder").val(),
+            'address': $("#userAddressOrder").val()
+        };
+        $.ajax({
+            type: 'POST',
+            data: order_details,
+            url: '/products/order',
+            dataType: 'JSON'
+        }).done(function( response ) {
+
+            // Check for successful (blank) response
+            if (response.msg === '') {
+
+                // Clear the form inputs
+                // $('#addproduct fieldset input').val('');
+
+                // Update the table
+                // populateTable();
+            }
+            else {
+
+                // If something goes wrong, alert the error message that our service returned
+                alert('Error: ' + response.msg);
+
+            }
+        });
+    }
+};
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 };

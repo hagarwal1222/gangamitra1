@@ -10,21 +10,21 @@ block content
             p(style='font-style: italic; font-size: 10px;') *NO PAYMENT ON ORDER
             .container
                 .row
-                    .col-md-offset-5.col-md-3
+                    .col-md-6.col-sm-9.col-xs-12(style="")
                         .form-login
-                            input#userName.form-control.input-sm.chat-input(type='text', placeholder='Name')
+                            input#userNameOrder.form-control.input-sm.chat-input(type='text', placeholder='Name')
                             br
-                            input#userPassword.form-control.input-sm.chat-input(type='text', placeholder='E-mail')
+                            input#userEmailOrder.form-control.input-sm.chat-input(type='email', placeholder='E-mail')
                             br
-                            input#userContactno.form-control.input-sm.chat-input(type='text', placeholder='Contact No.')
+                            input#userContactnoOrder.form-control.input-sm.chat-input(type='text', placeholder='Contact No.')
                             br
-                            textarea#userAddress.form-control.input-sm.chat-input(placeholder='Address')
+                            textarea#userAddressOrder.form-control.input-sm.chat-input(placeholder='Address')
                             .wrapper
                                 span.group-btn
-                                    a.btn.btn-primary.btn-md(href='#')
+                                    button(type='button' onclick='showorderlistonclick();' class='productpageback') Back!
+                                    a.btn.btn-primary.btn-md(href='javascript:void(0);' onclick="proceedwithorder();")
                                         | login
-                                        i.fa.fa-sign-in
+                                        //i.fa.fa-sign-in
             //button(type='button' onclick='showorderlistonclick1();' class='productpageconfirm') Confirm
-            button(type='button' onclick='showorderlistonclick();' class='productpageback') Back!
     script(type='text/javascript').
         populateBuyPageList();

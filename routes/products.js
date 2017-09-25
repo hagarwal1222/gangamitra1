@@ -22,4 +22,14 @@ router.get('/buyproducts', function(req, res, next) {
     res.render('products/buyproducts', { title: 'Express'});
 });
 
+router.post('/order', function(req, res){
+    var db = req.db;
+    var collection =  db.get('contacts');
+    collection.insert(req.body, function (err, result) {
+        res.send(
+            (err === null) ? {msg: ''} : {msg: err}
+        );
+    });
+});
+
 module.exports = router;

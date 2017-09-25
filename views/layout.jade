@@ -1,166 +1,171 @@
 doctype html
 html
-  head
+head
     title= title
+    // Latest compiled and minified CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
     link(rel='stylesheet', href='/stylesheets/style.css')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     link(href='/stylesheets/layout.css', rel='stylesheet', type='text/css', media='all')
     script(src='/javascripts/jquery.min.js')
+    // Latest compiled and minified JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
     script(src='/javascripts/global.js')
-  body
-      .wrapper.row0
-          #topbar.hoc.clear
-              // ################################################################################################
-              .fl_left
-                  ul.nospace
-                      li
-                          a(href='/')
-                              i.fa.fa-lg.fa-home
-                      li
-                          a(href='#') About
-                      li
-                          a(href='#') Contact
-              .fl_rightul.nospace
-                  li
-                      i.fa.fa-phone
-                      |  +91 976 036 0790
-                  li
-                      i.fa.fa-envelope-o
-                      a(href='mailto:info@domain.com?Subject=Hello%20again', target='_top') info@domain.com
-              // ################################################################################################
-      // ################################################################################################
-      // ################################################################################################
-      // ################################################################################################
-      .wrapper.row1
-          header#header.hoc.clear
-              // ################################################################################################
-              #logo.fl_left
-                  h1
-                      a(href='/') Nodelle
-                  p Congue pulvinar velit
-              // ################################################################################################
-              nav#mainav.fl_right
-                  ul.clear
-                      li.active
-                          a(href='/') Home
-                      li
-                          a(href='/products/productgallery') Gallery
-                      //li
-                          a.drop(href='#') Pages
-                          ul
-                              li
-                                  a(href='/products/productgallery') Gallery
-                              li
-                                  a(href='pages/full-width.html') Full Width
-                              li
-                                  a(href='pages/sidebar-left.html') Sidebar Left
-                              li
-                                  a(href='pages/sidebar-right.html') Sidebar Right
-                              li
-                                  a(href='pages/basic-grid.html') Basic Grid
-                      li
-                          a.drop(href='#') Associated Firms
-                          ul
-                              li
-                                  a(href='#') V. K. Herbs
-                              li
-                                  a(href='#') Ganga Mitra
-                              //li
-                              //  a.drop(href='#') Level 2 + Drop
-                              //  ul
-                              //    li
-                              //      a(href='#') Level 3
-                              //    li
-                              //      a(href='#') Level 3
-                              //    li
-                              //      a(href='#') Level 3
-                              li
-                                  a(href='#') Dev Bhoomi Traders
-                      li
-                          a(href='/products') Products
-                      //li
-                      //  a(href='#') Associated Firms
-      // ################################################################################################
-      // ################################################################################################
-      // ################################################################################################
-      // ################################################################################################
-      block content
-    .wrapper.row4
-        footer#footer.hoc.clear
+
+body
+    .wrapper.row0
+        #topbar.hoc.clear
             // ################################################################################################
-            .one_third.first
-                h6.title Massa viverra nullam
-                p
-                    | Egestas purus quis arcu sagittis vitae finibus lorem egestas fusce maximus aliquam mi ac placerat tortor molestie.
-                p.btmspace-15
-                    | Eu metus et elementum luctus nunc in dictum massa in felis feugiat rhoncus proin faucibus ante sit amet metus.
-                ul.faico.clear
+            .fl_left
+                ul.nospace
                     li
-                        a.faicon-facebook(href='#')
-                            i.fa.fa-facebook
+                        a(href='/')
+                            i.fa.fa-lg.fa-home
                     li
-                        a.faicon-twitter(href='#')
-                            i.fa.fa-twitter
+                        a(href='#') About
                     li
-                        a.faicon-dribble(href='#')
-                            i.fa.fa-dribbble
+                        a(href='#') Contact
+            .fl_rightul.nospace
+                li
+                    i.fa.fa-phone
+                    |  +91 976 036 0790
+                li
+                    i.fa.fa-envelope-o
+                    a(href='mailto:info@domain.com?Subject=Hello%20again', target='_top') info@domain.com
+            // ################################################################################################
+    // ################################################################################################
+    // ################################################################################################
+    // ################################################################################################
+    .wrapper.row1
+        header#header.hoc.clear
+            // ################################################################################################
+            #logo.fl_left
+                h1
+                    a(href='/') Nodelle
+                p Congue pulvinar velit
+            // ################################################################################################
+            nav#mainav.fl_right
+                ul.clear
+                    li.active
+                        a(href='/') Home
                     li
-                        a.faicon-linkedin(href='#')
-                            i.fa.fa-linkedin
+                        a(href='/products/productgallery') Gallery
+                    //li
+                        a.drop(href='#') Pages
+                        ul
+                            li
+                                a(href='/products/productgallery') Gallery
+                            li
+                                a(href='pages/full-width.html') Full Width
+                            li
+                                a(href='pages/sidebar-left.html') Sidebar Left
+                            li
+                                a(href='pages/sidebar-right.html') Sidebar Right
+                            li
+                                a(href='pages/basic-grid.html') Basic Grid
                     li
-                        a.faicon-google-plus(href='#')
-                            i.fa.fa-google-plus
+                        a.drop(href='#') Associated Firms
+                        ul
+                            li
+                                a(href='#') V. K. Herbs
+                            li
+                                a(href='#') Ganga Mitra
+                            //li
+                            //  a.drop(href='#') Level 2 + Drop
+                            //  ul
+                            //    li
+                            //      a(href='#') Level 3
+                            //    li
+                            //      a(href='#') Level 3
+                            //    li
+                            //      a(href='#') Level 3
+                            li
+                                a(href='#') Dev Bhoomi Traders
                     li
-                        a.faicon-vk(href='#')
-                            i.fa.fa-vk
-            .one_third
-                h6.title Massa mi duis tortor
-                ul.nospace.linklist.contact
-                    li
-                        i.fa.fa-map-marker
-                        address
-                            | Street Name & Number, Town, Postcode/Zip
-                    li
-                        i.fa.fa-phone
-                        |  +00 (123) 456 7890
-                    li
-                        i.fa.fa-fax
-                        |  +00 (123) 456 7890
-                    li
-                        i.fa.fa-envelope-o
-                        |  info@domain.com
-            .one_third
-                h6.title Justo efficitur ultrices
-                ul.nospace.linklist
-                    li
-                        article
-                            h2.nospace.font-x1
-                                a(href='#') Vel diam neque nunc
-                            time.font-xs.block.btmspace-10(datetime='2045-04-06')
-                                | Friday, 6
-                                sup th
-                                |  April 2045
-                            p.nospace Vitae feugiat nisi eget magna at arcu viverra posuere donec aliquam…
-                    li
-                        article
-                            h2.nospace.font-x1
-                                a(href='#') Quis hendrerit libero
-                            time.font-xs.block.btmspace-10(datetime='2045-04-05')
-                                | Thirsday, 5
-                                sup th
-                                |  April 2045
-                            p.nospace Cras auctor metus vel augue gravida ultrices maecenas consectetur…
-        .wrapper.row5
-            #copyright.hoc.clear
-                p.fl_left
-                    | Copyright © 2016 - All Rights Reserved -
-                    a(href='#') Domain Name
-                //p.fl_right
-                //    | Template by
-                //    a(target='_blank', href='http://www.os-templates.com/', title='Free Website Templates') OS Templates
-                a#backtotop(href='#top')
-                    i.fa.fa-chevron-up
-    // JAVASCRIPTS
+                        a(href='/products') Products
+                    //li
+                    //  a(href='#') Associated Firms
+    // ################################################################################################
+    // ################################################################################################
+    // ################################################################################################
+    // ################################################################################################
+    block content
+    .wrapper.row4
+    footer#footer.hoc.clear
+        // ################################################################################################
+        .one_third.first
+            h6.title Massa viverra nullam
+            p
+                | Egestas purus quis arcu sagittis vitae finibus lorem egestas fusce maximus aliquam mi ac placerat tortor molestie.
+            p.btmspace-15
+                | Eu metus et elementum luctus nunc in dictum massa in felis feugiat rhoncus proin faucibus ante sit amet metus.
+            ul.faico.clear
+                li
+                    a.faicon-facebook(href='#')
+                        i.fa.fa-facebook
+                li
+                    a.faicon-twitter(href='#')
+                        i.fa.fa-twitter
+                li
+                    a.faicon-dribble(href='#')
+                        i.fa.fa-dribbble
+                li
+                    a.faicon-linkedin(href='#')
+                        i.fa.fa-linkedin
+                li
+                    a.faicon-google-plus(href='#')
+                        i.fa.fa-google-plus
+                li
+                    a.faicon-vk(href='#')
+                        i.fa.fa-vk
+        .one_third
+            h6.title Massa mi duis tortor
+            ul.nospace.linklist.contact
+                li
+                    i.fa.fa-map-marker
+                    address
+                        | Street Name & Number, Town, Postcode/Zip
+                li
+                    i.fa.fa-phone
+                    |  +00 (123) 456 7890
+                li
+                    i.fa.fa-fax
+                    |  +00 (123) 456 7890
+                li
+                    i.fa.fa-envelope-o
+                    |  info@domain.com
+        .one_third
+            h6.title Justo efficitur ultrices
+            ul.nospace.linklist
+                li
+                    article
+                        h2.nospace.font-x1
+                            a(href='#') Vel diam neque nunc
+                        time.font-xs.block.btmspace-10(datetime='2045-04-06')
+                            | Friday, 6
+                            sup th
+                            |  April 2045
+                        p.nospace Vitae feugiat nisi eget magna at arcu viverra posuere donec aliquam…
+                li
+                    article
+                        h2.nospace.font-x1
+                            a(href='#') Quis hendrerit libero
+                        time.font-xs.block.btmspace-10(datetime='2045-04-05')
+                            | Thirsday, 5
+                            sup th
+                            |  April 2045
+                        p.nospace Cras auctor metus vel augue gravida ultrices maecenas consectetur…
+    .wrapper.row5
+        #copyright.hoc.clear
+            p.fl_left
+                | Copyright © 2016 - All Rights Reserved -
+                a(href='#') Domain Name
+            //p.fl_right
+            //    | Template by
+            //    a(target='_blank', href='http://www.os-templates.com/', title='Free Website Templates') OS Templates
+            a#backtotop(href='#top')
+                i.fa.fa-chevron-up
+// JAVASCRIPTS
 script(src='/javascripts/jquery.mobilemenu.js')
 script(src='/javascripts/jquery.backtotop.js')
