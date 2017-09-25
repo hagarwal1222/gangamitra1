@@ -4,5 +4,27 @@ block content
     script(src='../javascripts/productsjs.js')
     .wrapper.row2
         #listproductstoselect.hoc.container.clear
+        #orderForm.hoc.container.clear<!--(style='display:none;')-->
+            h3 Fill your details and We will contact you
+            p You personal details are safe with us, you just need to fill the form to complete your order request and we will contact you back.
+            p(style='font-style: italic; font-size: 10px;') *NO PAYMENT ON ORDER
+            .container
+                .row
+                    .col-md-offset-5.col-md-3
+                        .form-login
+                            input#userName.form-control.input-sm.chat-input(type='text', placeholder='Name')
+                            br
+                            input#userPassword.form-control.input-sm.chat-input(type='text', placeholder='E-mail')
+                            br
+                            input#userContactno.form-control.input-sm.chat-input(type='text', placeholder='Contact No.')
+                            br
+                            textarea#userAddress.form-control.input-sm.chat-input(placeholder='Address')
+                            .wrapper
+                                span.group-btn
+                                    a.btn.btn-primary.btn-md(href='#')
+                                        | login
+                                        i.fa.fa-sign-in
+            //button(type='button' onclick='showorderlistonclick1();' class='productpageconfirm') Confirm
+            button(type='button' onclick='showorderlistonclick();' class='productpageback') Back!
     script(type='text/javascript').
         populateBuyPageList();

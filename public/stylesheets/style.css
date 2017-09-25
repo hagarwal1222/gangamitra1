@@ -6,3 +6,40 @@ body {
 a {
   color: #00B7FF;
 }
+.productpageul {
+  list-style: none;
+  clear: both;
+}
+
+.productpageul li {
+  width: 20%;
+  float: left;
+  min-height: 50px;
+}
+
+.productpagenext, .productpageback{
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 11px 17px;
+}
+
+.productpagenext:hover, .productpageback:hover{
+  background: #333;
+  color: #FFFFFF;
+}
+
+.form-login {
+  background-color: #EDEDED;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
+  box-shadow:0 1px 0 #cfcfcf;
+}

@@ -35,10 +35,13 @@ function populateBuyPageList() {
     $.getJSON( '/products/productlist', function( data ) {
         // projectList = data;
         // For each item in our JSON, add a table row and cells to the content string
+        tableContent += '<ul class = "productpageul">';
         $.each(data, function(){
-            tableContent += '<input style="float: left;" type="checkbox" name="'+ this.name +'" value="'+this._id+'">'+this.name+'<br style="clear: both;">';
+        tableContent += '<li><input style="float: left;" type="checkbox" name="'+ this.name +'" value="'+this._id+'">'+this.name+'</li>';
         });
-        $('#listproductstoselect').html(tableContent);
+        tableContent += '</ul>';
+        tableContent += '<button type="button" class="productpagenext" onclick="showorderformonclick();">Proceed</button>';
+        $('#listproductstoselect').append(tableContent);
     });
 };
 
@@ -98,4 +101,14 @@ function addProduct(event) {
 
 function addProfunc(){
     $("#addproductdiv").show();
+};
+
+function showorderformonclick() {
+    $("#listproductstoselect").hide();
+    $("#orderForm").show();
+};
+
+function showorderlistonclick() {
+    $("#orderForm").hide();
+    $("#listproductstoselect").show();
 };
