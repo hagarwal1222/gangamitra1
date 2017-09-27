@@ -48,3 +48,16 @@ a {
 .form-login input{
 
 }
+
+#userInfoOnOrder {
+  left: 0;
+  clear: both;
+  top: 0;
+  width: 250px;
+ }
+
+#userInfoOnOrder p {
+  background: rgba(80, 120, 255, 0.05) none repeat scroll 0 0;
+  border: 1px solid #ccc;
+  padding: 15px;
+}

@@ -25,7 +25,17 @@ router.get('/buyproducts', function(req, res, next) {
 router.post('/order', function(req, res){
     var db = req.db;
     var collection =  db.get('contacts');
-    collection.insert(req.body, function (err, result) {
+    collection.insert({'name': req.body.name, 'email': req.body.email, 'phone': req.body.phone, 'address': req.body.address}, function (err, result) {
+
+    });
+    var collection =  db.get('orders');
+    collection.insert({'name': req.body.name, 'email': req.body.email, 'phone': req.body.phone, 'address': req.body.address}, function (err, result) {
+        var collection =  db.get('requested_products');
+        req.body['product_ids[]'].forEach(function(value){
+            collection.insert({'productlister_id': value, 'order_id': result._id}, function (err, result) {
+
+            });
+        });
         res.send(
             (err === null) ? {msg: ''} : {msg: err}
         );

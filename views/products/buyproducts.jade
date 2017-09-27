@@ -26,5 +26,20 @@ block content
                                         | login
                                         //i.fa.fa-sign-in
             //button(type='button' onclick='showorderlistonclick1();' class='productpageconfirm') Confirm
+    .wrapper.row1
+        .container#userInfoOnOrder
+                h2 Order Places For
+                p
+                    strong Name:
+                    span#userInfoOnOrderName
+                    br
+                    strong Email:
+                    span#userInfoOnOrderEmail
+                    br
+                    strong Phone Number:
+                    span#userInfoOnOrderPhone
+                    br
+                    strong Address:
+                    span#userInfoOnOrderAddress
     script(type='text/javascript').
         populateBuyPageList();

@@ -146,7 +146,8 @@ function proceedwithorder() {
             'name': $("#userNameOrder").val(),
             'email': $("#userEmailOrder").val(),
             'phone': $("#userContactnoOrder").val(),
-            'address': $("#userAddressOrder").val()
+            'address': $("#userAddressOrder").val(),
+            'product_ids': products_id
         };
         $.ajax({
             type: 'POST',
