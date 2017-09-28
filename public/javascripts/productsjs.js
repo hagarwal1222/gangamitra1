@@ -192,6 +192,8 @@ function proceedwithorder() {
 
             // Check for successful (blank) response
             if (response.msg === '') {
+                $('#step_fourth').removeClass('disabled');
+                $('#step_fourth').addClass('complete');
                 var tableContent = '';
                 $('#listproductstoselect input:checkbox:checked').each(function(){
                     tableContent += '<tr>';
