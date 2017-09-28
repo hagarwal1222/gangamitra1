@@ -3,8 +3,40 @@ extends ../layout
 block content
     script(src='../javascripts/productsjs.js')
     .wrapper.row2
+        .container
+            .row.bs-wizard(style='border-bottom:0;')
+                .col-xs-3.bs-wizard-step.complete#step_first
+                    .text-center.bs-wizard-stepnum Step 1
+                    .progress
+                        .progress-bar
+                    a.bs-wizard-dot(href='#')
+                    .bs-wizard-info.text-center Lorem ipsum dolor sit amet.
+                .col-xs-3.bs-wizard-step.disabled#step_second
+                    // complete
+                    .text-center.bs-wizard-stepnum Step 2
+                    .progress
+                        .progress-bar
+                    a.bs-wizard-dot(href='#')
+                    .bs-wizard-info.text-center
+                        | Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat
+                .col-xs-3.bs-wizard-step.disabled#step_third
+                    // complete
+                    .text-center.bs-wizard-stepnum Step 3
+                    .progress
+                        .progress-bar
+                    a.bs-wizard-dot(href='#')
+                    .bs-wizard-info.text-center
+                        | Integer semper dolor ac auctor rutrum. Duis porta ipsum vitae mi bibendum bibendum
+                .col-xs-3.bs-wizard-step.disabled#step_fourth
+                    // active
+                    .text-center.bs-wizard-stepnum Step 4
+                    .progress
+                        .progress-bar
+                    a.bs-wizard-dot(href='#')
+                    .bs-wizard-info.text-center
+                        | Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae
         #listproductstoselect.hoc.container.clear
-        #orderForm.hoc.container.clear<!--(style='display:none;')-->
+        #orderForm.hoc.container.clear(style='display:none;')
             h3 Fill your details and We will contact you
             p You personal details are safe with us, you just need to fill the form to complete your order request and we will contact you back.
             p(style='font-style: italic; font-size: 10px;') *NO PAYMENT ON ORDER
@@ -20,14 +52,11 @@ block content
                             br
                             textarea#userAddressOrder.form-control.input-sm.chat-input(placeholder='Address')
                             .wrapper
-                                span.group-btn
-                                    button(type='button' onclick='showorderlistonclick();' class='productpageback') Back!
-                                    a.btn.btn-primary.btn-md(href='javascript:void(0);' onclick="proceedwithorder();")
-                                        | login
-                                        //i.fa.fa-sign-in
-            //button(type='button' onclick='showorderlistonclick1();' class='productpageconfirm') Confirm
+                                span.group-btn(style="display: block;margin-top: 26px;text-align: center;")
+                                    button(type='button' onclick='showorderlistonclick();' class='btn btn-danger btn-md') Back
+                                    button(type='button' onclick='showconfirmationbox();' class='btn btn-success btn-md') Confirm
     .wrapper.row1
-        .container#userInfoOnOrder
+        .container#userInfoOnOrder(style='display: none;')
                 h2 Order Places For
                 p
                     strong Name:
@@ -36,10 +65,13 @@ block content
                     strong Email:
                     span#userInfoOnOrderEmail
                     br
-                    strong Phone Number:
+                    strong Contact:
                     span#userInfoOnOrderPhone
                     br
                     strong Address:
                     span#userInfoOnOrderAddress
+                button.btn.btn-success.btn-md(type='button' onclick="proceedwithorder();")
+                    | Send Order
+                    //i.fa.fa-sign-in
     script(type='text/javascript').
         populateBuyPageList();

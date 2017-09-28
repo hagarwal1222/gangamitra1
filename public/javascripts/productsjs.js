@@ -105,6 +105,9 @@ function addProfunc(){
 
 function showorderformonclick() {
     if ($('#listproductstoselect input:checkbox').is(":checked")){
+        $(window).scrollTop(0);
+        $('#step_second').removeClass('disabled');
+        $('#step_second').addClass('complete');
         $("#listproductstoselect").hide();
         $("#orderForm").show();
     }else{
@@ -113,8 +116,22 @@ function showorderformonclick() {
 };
 
 function showorderlistonclick() {
+    $('#step_second').removeClass('complete');
+    $('#step_second').addClass('disabled');
     $("#orderForm").hide();
     $("#listproductstoselect").show();
+};
+
+function showconfirmationbox() {
+    $(window).scrollTop(0);
+    $('#step_third').removeClass('disabled');
+    $('#step_third').addClass('complete');
+    $('#userInfoOnOrder').show();
+    $("#userInfoOnOrder #userInfoOnOrderName").text($('#userNameOrder').val());
+    $("#userInfoOnOrder #userInfoOnOrderEmail").text($('#userEmailOrder').val());
+    $("#userInfoOnOrder #userInfoOnOrderPhone").text($('#userContactnoOrder').val());
+    $("#userInfoOnOrder #userInfoOnOrderAddress").text($('#userAddressOrder').val());
+    $('#orderForm').hide();
 };
 
 function proceedwithorder() {
@@ -158,7 +175,6 @@ function proceedwithorder() {
 
             // Check for successful (blank) response
             if (response.msg === '') {
-
                 // Clear the form inputs
                 // $('#addproduct fieldset input').val('');
 

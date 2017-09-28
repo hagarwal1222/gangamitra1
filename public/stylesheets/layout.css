@@ -246,7 +246,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#A3D044;}
 .overlay{color:#FFFFFF; background-color:inherit;}
 .overlay::after{color:inherit; background-color:rgba(0,0,0,.55); background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhJREFUeNpiYGBgePz//38GRhABAgABBgBFTAbfCBNE2AAAAABJRU5ErkJggg==");}
 
-.btn{color:#FFFFFF; background-color:#A3D044; border-color:#A3D044;border-radius:8px;}
+.btn.btn-color{color:#FFFFFF; background-color:#A3D044; border-color:#A3D044;border-radius:8px;}
 .btn.inverse:hover{color:#FFFFFF; background-color:#ff531a; border-color:#ff531a;}
 .btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
 
