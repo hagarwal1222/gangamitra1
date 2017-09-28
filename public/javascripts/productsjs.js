@@ -123,15 +123,32 @@ function showorderlistonclick() {
 };
 
 function showconfirmationbox() {
-    $(window).scrollTop(0);
-    $('#step_third').removeClass('disabled');
-    $('#step_third').addClass('complete');
-    $('#userInfoOnOrder').show();
-    $("#userInfoOnOrder #userInfoOnOrderName").text($('#userNameOrder').val());
-    $("#userInfoOnOrder #userInfoOnOrderEmail").text($('#userEmailOrder').val());
-    $("#userInfoOnOrder #userInfoOnOrderPhone").text($('#userContactnoOrder').val());
-    $("#userInfoOnOrder #userInfoOnOrderAddress").text($('#userAddressOrder').val());
-    $('#orderForm').hide();
+    var email = $("#userEmailOrder").val();
+    if ($("#userNameOrder").val().length > 3){
+        if (validateEmail(email)) {
+            if ($("#userContactnoOrder").val().length > 9){
+                if (!isNaN($("#userContactnoOrder").val())){
+                    $(window).scrollTop(0);
+                    $('#step_third').removeClass('disabled');
+                    $('#step_third').addClass('complete');
+                    $('#userInfoOnOrder').show();
+                    $("#userInfoOnOrder #userInfoOnOrderName").text($('#userNameOrder').val());
+                    $("#userInfoOnOrder #userInfoOnOrderEmail").text($('#userEmailOrder').val());
+                    $("#userInfoOnOrder #userInfoOnOrderPhone").text($('#userContactnoOrder').val());
+                    $("#userInfoOnOrder #userInfoOnOrderAddress").text($('#userAddressOrder').val());
+                    $('#orderForm').hide();
+                }else{
+                    alert("fill digits");
+                }
+            }else{
+                alert("fill correct number");
+            }
+        }else{
+            alert("fill correct email");
+        }
+    }else{
+        alert("Fill name");
+    }
 };
 
 function proceedwithorder() {
@@ -175,8 +192,16 @@ function proceedwithorder() {
 
             // Check for successful (blank) response
             if (response.msg === '') {
+                var tableContent = '';
+                $('#listproductstoselect input:checkbox:checked').each(function(){
+                    tableContent += '<tr>';
+                    tableContent += '<td><a class="" rel="' + $(this).name + '">' + this.name + '</a></td>';
+                    // tableContent += '<td><a href="#" class="" rel="' + this._id + '">delete</a></td>';
+                    tableContent += '</tr>';
+                });
+                $('#productList table tbody').html(tableContent);
                 // Clear the form inputs
-                // $('#addproduct fieldset input').val('');
+                $('#orderForm input, #orderForm textarea').val('');
 
                 // Update the table
                 // populateTable();

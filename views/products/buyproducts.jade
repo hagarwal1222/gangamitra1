@@ -6,14 +6,14 @@ block content
         .container
             .row.bs-wizard(style='border-bottom:0;')
                 .col-xs-3.bs-wizard-step.complete#step_first
-                    .text-center.bs-wizard-stepnum Step 1
+                    .text-center.bs-wizard-stepnum 1. Start Buying Process
                     .progress
                         .progress-bar
                     a.bs-wizard-dot(href='#')
-                    .bs-wizard-info.text-center Lorem ipsum dolor sit amet.
+                    .bs-wizard-info.text-center No need to pay for your online order. It is your order request.
                 .col-xs-3.bs-wizard-step.disabled#step_second
                     // complete
-                    .text-center.bs-wizard-stepnum Step 2
+                    .text-center.bs-wizard-stepnum 2. Choose Products
                     .progress
                         .progress-bar
                     a.bs-wizard-dot(href='#')
@@ -21,7 +21,7 @@ block content
                         | Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat
                 .col-xs-3.bs-wizard-step.disabled#step_third
                     // complete
-                    .text-center.bs-wizard-stepnum Step 3
+                    .text-center.bs-wizard-stepnum 3. Fill Details
                     .progress
                         .progress-bar
                     a.bs-wizard-dot(href='#')
@@ -29,7 +29,7 @@ block content
                         | Integer semper dolor ac auctor rutrum. Duis porta ipsum vitae mi bibendum bibendum
                 .col-xs-3.bs-wizard-step.disabled#step_fourth
                     // active
-                    .text-center.bs-wizard-stepnum Step 4
+                    .text-center.bs-wizard-stepnum 4. Confirm your request
                     .progress
                         .progress-bar
                     a.bs-wizard-dot(href='#')
@@ -73,5 +73,13 @@ block content
                 button.btn.btn-success.btn-md(type='button' onclick="proceedwithorder();")
                     | Send Order
                     //i.fa.fa-sign-in
+    .wrapper.row2
+        .hoc.container.clear
+            h2 Product List
+            #productList
+                table
+                    thead
+                        th Name
+                    tbody
     script(type='text/javascript').
         populateBuyPageList();
