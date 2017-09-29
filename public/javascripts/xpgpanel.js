@@ -72,12 +72,12 @@ function checkorderadmin(){
         $.each(data, function(){
             count = count+1;
             orderContent += '<tr>';
-            orderContent += '<td><a class="" rel="' + count + '">' + count + '</a></td>';
-            orderContent += '<td><a class="" rel="' + this._id + '">' + this._id + '</a></td>';
-            orderContent += '<td><a class="" rel="' + this._id + '">' + this.name + '</a></td>';
-            orderContent += '<td><a class="" rel="' + this._id + '">' + this.email + '</a></td>';
-            orderContent += '<td><a class="" rel="' + this._id + '">' + this.phone + '</a></td>';
-            orderContent += '<td><a class="" rel="' + this._id + '">' + this.address + '</a></td>';
+            orderContent += '<td><a class="" href="xpgadminpanel/orderdetail/'+ this._id +'" rel="' + count + '">' + count + '</a></td>';
+            orderContent += '<td><a class="" href="xpgadminpanel/orderdetail/'+ this._id +'" rel="' + this._id + '">' + this._id + '</a></td>';
+            orderContent += '<td><a class="" href="xpgadminpanel/orderdetail/'+ this._id +'" rel="' + this._id + '">' + this.name + '</a></td>';
+            orderContent += '<td><a class="" href="xpgadminpanel/orderdetail/'+ this._id +'" rel="' + this._id + '">' + this.email + '</a></td>';
+            orderContent += '<td><a class="" href="xpgadminpanel/orderdetail/'+ this._id +'" rel="' + this._id + '">' + this.phone + '</a></td>';
+            orderContent += '<td><a class="" href="xpgadminpanel/orderdetail/'+ this._id +'" rel="' + this._id + '">' + this.address + '</a></td>';
             orderContent += '</tr>';
         });
 

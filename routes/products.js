@@ -33,11 +33,11 @@ router.post('/order', function(req, res){
         var collection =  db.get('requested_products');
         if (req.body['product_ids[]'][0].length != 1){
             req.body['product_ids[]'].forEach(function(value){
-                collection.insert({'productlister_id': value, 'order_id': result._id}, function (err, result) {
+                collection.insert({'productlister_id': value, 'order_id': (result._id).toHexString()}, function (err, result) {
                 });
             });
         }else{
-            collection.insert({'productlister_id': req.body['product_ids[]'], 'order_id': result._id}, function (err, result) {
+            collection.insert({'productlister_id': req.body['product_ids[]'], 'order_id': (result._id).toHexString()}, function (err, result) {
             });
         }
         res.send(

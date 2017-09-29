@@ -86,4 +86,5 @@ a {
 
 #orderlisttable table tbody tr a{
   color: #00b7ff;
+  cursor: pointer;
 }

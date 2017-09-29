@@ -24,4 +24,14 @@ router.get('/orders', function (req, res) {
     });
 });
 
+router.get('/orderdetail/:id', function (req, res) {
+    console.log(req.params.id);
+    var db = req.db;
+    var collection = db.get('requested_products');
+    collection.find({order_id: req.params.id},{}, function (err, data) {
+        console.log(data);
+        res.render('xpgadminpanel/orderdetail', { data: data, title: 'Order Details' });
+    });
+});
+
 module.exports = router;
