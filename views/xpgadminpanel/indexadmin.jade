@@ -2,6 +2,7 @@ extends ../layout
 
 block content
     script(src='../javascripts/productsjs.js')
+    script(src='../javascripts/xpgpanel.js')
     .wrapper.row2
         .hoc.container.clear
             // ################################################################################################
@@ -20,7 +21,7 @@ block content
                         strong.numb
                             img(src='images/icons/shopping-cart.svg')
                         h6.heading.font-x1
-                            a(href='#') Check Orders
+                            a(onclick='checkorderadmin();' style='cursor: pointer;') Check Orders
                         p Dolor eu suscipit facilisis vestibulum vitae semper nisl vivamus a ligula…
                 li.one_third
                     article
@@ -55,5 +56,19 @@ block content
                 //br
                 button#btnAddProduct.btn.btn-warning Add Product
 
+    #orderlist.wrapper.row2(style='display:none;')
+        .hoc.container.clear
+            h2 Order List
+            #orderlisttable
+                table
+                    thead
+                        th
+                        th ID
+                        th Name
+                        th Email
+                        th Phone
+                        th Address
+                    tbody
+
     script(type='text/javascript').
-        populateTable();
+//        populateTable();

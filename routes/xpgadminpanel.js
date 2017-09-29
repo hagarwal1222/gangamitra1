@@ -16,4 +16,12 @@ router.post('/addproduct', function(req, res){
     });
 });
 
+router.get('/orders', function (req, res) {
+    var db = req.db;
+    var collection = db.get('contacts');
+    collection.find({},{}, function (err, data) {
+        res.json(data);
+    });
+});
+
 module.exports = router;
