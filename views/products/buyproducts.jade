@@ -35,7 +35,7 @@ block content
                     a.bs-wizard-dot(href='#')
                     .bs-wizard-info.text-center
                         | Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae
-        #listproductstoselect.hoc.container.clear
+        #listproductstoselect.hoc.container.clear(style='padding-top:10px;')
         #orderForm.hoc.container.clear(style='display:none;')
             h3 Fill your details and We will contact you
             p You personal details are safe with us, you just need to fill the form to complete your order request and we will contact you back.
@@ -74,7 +74,7 @@ block content
                     | Send Order
                     //i.fa.fa-sign-in
     .wrapper.row2
-        .hoc.container.clear
+        .hoc.container.clear#afterorderlist(style='display: none;')
             h2 Product List
             #productList
                 table

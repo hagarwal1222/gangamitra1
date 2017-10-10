@@ -3,4 +3,15 @@ extends ../layout
 block content
     script(src='../../javascripts/productsjs.js')
     script(src='../../javascripts/xpgpanel.js')
-    h1=data
+    .wrapper.row2
+        .hoc.container.clear
+            h2 Product List
+            #productList
+                table
+                    thead
+                        th Name
+                    tbody
+                        if order
+                            each ord in order
+                                tr
+                                    td #{products_hash[ord.productlister_id]}

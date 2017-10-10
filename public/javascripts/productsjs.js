@@ -136,6 +136,8 @@ function proceedwithorder() {
             if (response.msg === '') {
                 $('#step_fourth').removeClass('disabled');
                 $('#step_fourth').addClass('complete');
+                $('#userInfoOnOrder').hide();
+                $('#afterorderlist').show();
                 var tableContent = '';
                 $('#listproductstoselect input:checkbox:checked').each(function(){
                     tableContent += '<tr>';
