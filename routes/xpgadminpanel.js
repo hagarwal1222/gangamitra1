@@ -38,7 +38,7 @@ router.get('/orderdetail/:id', function (req, res) {
         });
         setTimeout(function () { //====================USE ASYNC INSTED
             res.render('xpgadminpanel/orderdetail', { order: data, products_hash: products, title: 'Order Details' });
-        }, 1500)
+        }, 1000)
     });
 });
 
