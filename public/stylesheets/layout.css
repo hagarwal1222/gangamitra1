@@ -111,6 +111,7 @@ File: Layout CSS
 #footer .contact li *{margin:0; padding:0; line-height:1.6;}
 #footer .contact li i{display:block; position:absolute; top:0; left:0; width:30px; font-size:16px; text-align:center;}
 
+.first_half{width:48%;}
 
 /* Copyright
 --------------------------------------------------------------------------------------------------------------- */
